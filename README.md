@@ -18,7 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 ## Figma Design 
-[https://www.figma.com/file/ZvbLqA2q9GudEss5hq0llH/Route-E-Commerce-App?t=vipJf2rmxtUSIoEx-0]
+https://www.figma.com/file/ZvbLqA2q9GudEss5hq0llH/Route-E-Commerce-App?t=vipJf2rmxtUSIoEx-0
 
 ## Route E-commerce App
-[https://documenter.getpostman.com/view/5709532/2s93JqTRWN]
+https://documenter.getpostman.com/view/5709532/2s93JqTRWN
