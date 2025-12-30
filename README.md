@@ -15,5 +15,8 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-# Route E-commerce App - (Api)
+# Route E-commerce App
 [https://documenter.getpostman.com/view/5709532/2s93JqTRWN]
+
+## Figma Design 
+[https://www.figma.com/file/ZvbLqA2q9GudEss5hq0llH/Route-E-Commerce-App?t=vipJf2rmxtUSIoEx-0]
