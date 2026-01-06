@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/router/router.dart';
 import 'package:flutter/material.dart';
 
 class EcommerceApp extends StatelessWidget {
@@ -5,28 +6,10 @@ class EcommerceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(),
-      home: const MyHomePage(title: "Route E-Commerce App"),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
-      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: []),
+    return MaterialApp.router(
+      routerConfig: router.config(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.light),
     );
   }
 }
