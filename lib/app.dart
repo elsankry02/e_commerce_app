@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/routers/go_router.dart';
 import 'package:e_commerce_app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
@@ -6,9 +7,10 @@ class EcommerceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light, fontFamily: kPoppins),
+      routerConfig: router,
     );
   }
 }

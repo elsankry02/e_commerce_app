@@ -10,9 +10,13 @@ class AppColors {
   static const kDarkBlue = Color(0xB2000000);
   static const kDescriptionColor = Color(0xff004f99);
   // Product Details Colors
-  static const kOrange = Color(0xffFF645A);
+  static const kOrangeRed = Color(0xffFF645A);
   static const kGreen = Color(0xff02B935);
   static const kBlue = Color(0xff0973DD);
   static const kRed = Color(0xffBC3018);
   static const kBrowen = Color(0xff2F2929);
+  static const kBorder = Color(0xffb2c6da);
+  static const kLineThrough = Color(0xff668db4);
+  static const kOrange = Color(0xffFFA920);
+  static const kStar = Color(0xfffcd934);
 }
