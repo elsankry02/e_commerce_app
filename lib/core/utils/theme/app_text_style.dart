@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/core/extensions/app_extensions.dart'; // تأكد من المسار الصحيح للـ extension
+import 'package:e_commerce_app/core/utils/extensions/app_extensions.dart'; // تأكد من المسار الصحيح للـ extension
 import 'package:flutter/material.dart';
 
 class AppTextStyle {
