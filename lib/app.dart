@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/core/routers/router.dart';
+import 'package:e_commerce_app/core/routers/go_router.dart';
 import 'package:flutter/material.dart';
 
 import 'core/utils/constants/app_strings.dart';
@@ -11,7 +11,7 @@ class EcommerceApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light, fontFamily: kPoppins),
-      routerConfig: router.config(),
+      routerConfig: router,
     );
   }
 }
