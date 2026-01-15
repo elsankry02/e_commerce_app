@@ -13,7 +13,9 @@ class _TestPageState extends State<TestPage> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        child: Row(mainAxisAlignment: .center, children: []),
+        child: Center(
+          child: Column(mainAxisAlignment: .center, children: []),
+        ),
       ),
     );
   }
