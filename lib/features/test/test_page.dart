@@ -13,7 +13,7 @@ class _TestPageState extends State<TestPage> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 70),
-        child: Center(child: ListView(children: [])),
+        child: Center(child: Column(children: [])),
       ),
     );
   }
