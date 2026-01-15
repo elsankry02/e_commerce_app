@@ -11,7 +11,7 @@ class CustomCategoryCard extends StatelessWidget {
   final void Function()? onTap;
   const CustomCategoryCard({
     super.key,
-    this.imageUrl = AppImages.testTwo,
+    this.imageUrl = AppImages.kTestCategoryCard,
     this.title = "Category",
     this.onTap,
   });
@@ -43,7 +43,7 @@ class CustomCategoryCard extends StatelessWidget {
                 color: Colors.white24,
                 colorBlendMode: BlendMode.srcOver,
                 errorWidget: (context, url, error) => Image.asset(
-                  AppImages.testTwo,
+                  AppImages.kTestCategoryCard,
                   height: context.kHeight * 0.14,
                   width: context.kWidth,
                   fit: BoxFit.cover,

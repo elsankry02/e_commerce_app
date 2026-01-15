@@ -1,10 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import '../utils/extensions/app_extensions.dart';
-import '../utils/theme/app_colors.dart';
-import '../utils/constants/app_images.dart';
-import '../utils/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+
+import '../utils/constants/app_images.dart';
+import '../utils/extensions/app_extensions.dart';
+import '../utils/theme/app_colors.dart';
+import '../utils/theme/app_text_style.dart';
 
 class CustomProductList extends StatelessWidget {
   final void Function()? addOnTap, productOnTap, favouriteOnTap;
@@ -17,7 +18,7 @@ class CustomProductList extends StatelessWidget {
     super.key,
     this.title = "Nike Air Jordon",
     this.description = "Nike shoes flexible for wo..",
-    this.imageUrl = AppImages.test,
+    this.imageUrl = AppImages.kTestProdecutList,
     this.productOnTap,
     this.favouriteOnTap,
     this.addOnTap,
@@ -58,7 +59,7 @@ class CustomProductList extends StatelessWidget {
                     width: context.kWidth,
                     height: context.kHeight * 0.140,
                     errorWidget: (context, url, error) => Image.asset(
-                      AppImages.test,
+                      AppImages.kTestProdecutList,
                       fit: .cover,
                       width: context.kWidth,
                       height: context.kHeight * 0.140,
