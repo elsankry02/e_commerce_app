@@ -11,7 +11,7 @@ class CustomCategoryCard extends StatelessWidget {
   final void Function()? onTap;
   const CustomCategoryCard({
     super.key,
-    this.imageUrl = AppImages.kTestCategoryCard,
+    required this.imageUrl,
     this.title = "Category",
     this.onTap,
   });

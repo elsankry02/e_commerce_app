@@ -12,10 +12,10 @@ class _TestPageState extends State<TestPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        child: Center(
-          child: Column(mainAxisAlignment: .center, children: []),
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 70),
+        child: Center(child: ListView(children: [
+            ],
+          )),
       ),
     );
   }

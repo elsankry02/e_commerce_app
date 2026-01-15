@@ -12,13 +12,14 @@ class CustomProductList extends StatelessWidget {
   final num oldPrice, price, rating;
   final double? width;
   final IconData? icon;
+  final EdgeInsets? margin;
   final String imageUrl, description, title;
   final Color? iconColor;
   const CustomProductList({
     super.key,
     this.title = "Nike Air Jordon",
     this.description = "Nike shoes flexible for wo..",
-    this.imageUrl = AppImages.kTestProdecutList,
+    required this.imageUrl,
     this.productOnTap,
     this.favouriteOnTap,
     this.addOnTap,
@@ -28,6 +29,7 @@ class CustomProductList extends StatelessWidget {
     this.icon = Iconsax.heart_copy,
     this.iconColor,
     this.width,
+    this.margin,
   });
 
   @override
@@ -40,6 +42,7 @@ class CustomProductList extends StatelessWidget {
       borderRadius: BorderRadius.circular(15),
       onTap: productOnTap,
       child: Container(
+        margin: margin,
         width: width,
         decoration: BoxDecoration(
           border: Border.all(color: AppColors.kBorder, width: 2),
@@ -57,7 +60,7 @@ class CustomProductList extends StatelessWidget {
                     imageUrl: imageUrl,
                     fit: .cover,
                     width: context.kWidth,
-                    height: context.kHeight * 0.140,
+                    height: context.kHeight * 0.220,
                     errorWidget: (context, url, error) => Image.asset(
                       AppImages.kTestProdecutList,
                       fit: .cover,

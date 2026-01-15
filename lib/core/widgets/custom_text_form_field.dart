@@ -1,5 +1,6 @@
-import '../utils/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../utils/theme/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
@@ -9,7 +10,7 @@ class CustomTextFormField extends StatelessWidget {
   final double radius;
   final AutovalidateMode? autovalidateMode;
   final TextInputType? keyboardType;
-  final EdgeInsetsGeometry? contentPadding;
+  final EdgeInsets? contentPadding;
   final TextStyle? hintStyle, suffixStyle, style, prefixStyle;
   final int? maxLength;
   final Widget? prefixIcon, suffixIcon;
