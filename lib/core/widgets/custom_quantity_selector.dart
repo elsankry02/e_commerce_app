@@ -1,15 +1,15 @@
 import 'package:e_commerce_app/core/utils/theme/app_colors.dart';
 import 'package:e_commerce_app/core/utils/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomQuantitySelector extends StatelessWidget {
-  final void Function()? onMinus, onAdd;
+  final void Function()? minusOnTap, addOnTap;
   final num quantity;
   const CustomQuantitySelector({
     super.key,
-    this.onMinus,
-    this.onAdd,
+    this.minusOnTap,
+    this.addOnTap,
     this.quantity = 0,
   });
 
@@ -25,8 +25,8 @@ class CustomQuantitySelector extends StatelessWidget {
         mainAxisAlignment: .spaceBetween,
         children: [
           _iconBtn(
-            onPressed: onAdd,
-            icon: Iconsax.add_circle_copy,
+            onPressed: addOnTap,
+            icon: FontAwesomeIcons.squarePlus,
             color: AppColors.kWhite,
           ),
           Text(
@@ -37,8 +37,8 @@ class CustomQuantitySelector extends StatelessWidget {
             ),
           ),
           _iconBtn(
-            onPressed: onMinus,
-            icon: Iconsax.minus_cirlce_copy,
+            onPressed: minusOnTap,
+            icon: FontAwesomeIcons.squareMinus,
             color: AppColors.kWhite,
           ),
         ],

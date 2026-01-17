@@ -3,33 +3,36 @@ import 'package:e_commerce_app/core/utils/constants/app_images.dart';
 import 'package:e_commerce_app/core/utils/extensions/app_extensions.dart';
 import 'package:e_commerce_app/core/utils/theme/app_colors.dart';
 import 'package:e_commerce_app/core/utils/theme/app_text_style.dart';
-import 'package:e_commerce_app/core/widgets/custom_favourite_icon_btn.dart';
-import 'package:e_commerce_app/core/widgets/custom_primary_btn.dart';
+import 'package:e_commerce_app/core/widgets/custom_quantity_selector.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomWishlistItem extends StatelessWidget {
-  final void Function()? addToCartOnTap, favouriteOnTap, itemOnTap;
-  final Color colorCircle;
-  final Color? iconColor;
-  final IconData? icon;
-  final EdgeInsets? margin;
+class CustomCartItem extends StatelessWidget {
   final String imageUrl, titleCircle, titleItem;
-  final num? oldPrice;
-  final num price;
-  const CustomWishlistItem({
+  final void Function()? addToCartOnTap,
+      deleteOnTap,
+      itemOnTap,
+      minusOnTap,
+      addOnTap;
+  final Color colorCircle;
+  final EdgeInsets? margin;
+  final num price, size, quantity;
+
+  const CustomCartItem({
     super.key,
     required this.imageUrl,
-    this.titleCircle = "Orange",
-    this.titleItem = "Tall Cotton Dress",
+    this.titleCircle = "orange",
+    this.titleItem = "Nike Air Jordon",
     this.price = 1500,
-    this.oldPrice = 2000,
-    this.icon = Icons.favorite,
-    this.colorCircle = AppColors.kOrange,
-    this.iconColor = AppColors.kMainColor,
+    this.colorCircle = AppColors.kOrangeRed,
     this.addToCartOnTap,
-    this.favouriteOnTap,
+    this.deleteOnTap,
     this.itemOnTap,
     this.margin,
+    this.quantity = 0,
+    this.size = 40,
+    this.minusOnTap,
+    this.addOnTap,
   });
 
   @override
@@ -41,7 +44,7 @@ class CustomWishlistItem extends StatelessWidget {
         borderRadius: borderRadius,
         onTap: itemOnTap,
         child: Container(
-          padding: EdgeInsetsDirectional.only(end: 16),
+          padding: EdgeInsetsDirectional.only(end: 8),
           decoration: BoxDecoration(
             border: Border.all(color: AppColors.kLineThrough),
             borderRadius: borderRadius,
@@ -53,9 +56,12 @@ class CustomWishlistItem extends StatelessWidget {
               Expanded(
                 child: ListTile(
                   contentPadding: EdgeInsets.zero,
-                  title: _titleAndFavouriteIcon(context),
+                  title: _titleAndDeleteIcon(context),
                   subtitle: Column(
-                    children: [_colorItem(context), _priceAndBtnCart(context)],
+                    children: [
+                      _colorAndSizeItem(context),
+                      _priceAndQuantitySelector(context),
+                    ],
                   ),
                 ),
               ),
@@ -66,7 +72,7 @@ class CustomWishlistItem extends StatelessWidget {
     );
   }
 
-  Row _titleAndFavouriteIcon(BuildContext context) {
+  Row _titleAndDeleteIcon(BuildContext context) {
     return Row(
       mainAxisAlignment: .spaceBetween,
       children: [
@@ -77,16 +83,20 @@ class CustomWishlistItem extends StatelessWidget {
             color: AppColors.kTextColor,
           ),
         ),
-        CustomFavouriteIconBtn(
-          favouriteOnTap: favouriteOnTap,
-          icon: icon,
-          iconColor: iconColor,
+        InkWell(
+          onTap: deleteOnTap,
+          borderRadius: BorderRadius.circular(50),
+          child: Icon(
+            FontAwesomeIcons.trashCan,
+            color: AppColors.kTextColor,
+            size: 20,
+          ),
         ),
       ],
     );
   }
 
-  Row _colorItem(BuildContext context) {
+  Row _colorAndSizeItem(BuildContext context) {
     return Row(
       spacing: 8,
       children: [
@@ -96,17 +106,17 @@ class CustomWishlistItem extends StatelessWidget {
           decoration: BoxDecoration(shape: .circle, color: colorCircle),
         ),
         Text(
-          titleCircle,
+          "$titleCircle | size: $size",
           style: AppTextStyle.kTitleSmallRegular(
             context,
-            color: AppColors.kTextColor,
+            color: AppColors.kDescriptionColor,
           ),
         ),
       ],
     );
   }
 
-  Row _priceAndBtnCart(BuildContext context) {
+  Row _priceAndQuantitySelector(BuildContext context) {
     return Row(
       mainAxisAlignment: .spaceBetween,
       children: [
@@ -117,26 +127,10 @@ class CustomWishlistItem extends StatelessWidget {
             color: AppColors.kTextColor,
           ),
         ),
-        if (oldPrice != null && oldPrice! > 0)
-          Text(
-            "EGP ${oldPrice.toString()}",
-            style: context.kTextTheme.labelSmall!.copyWith(
-              fontWeight: FontWeight.w400,
-              color: AppColors.kLineThrough,
-              decoration: TextDecoration.lineThrough,
-              decorationColor: AppColors.kLineThrough,
-            ),
-          ),
-        CustomPrimaryBtn(
-          title: "Add to Cart",
-          borderRadius: BorderRadius.circular(15),
-          textStyle: AppTextStyle.kTitleSmallMedium(
-            context,
-            color: AppColors.kWhite,
-          ),
-          padding: EdgeInsets.all(9),
-          mainAxisSize: .min,
-          onTap: addToCartOnTap,
+        CustomQuantitySelector(
+          addOnTap: addOnTap,
+          minusOnTap: minusOnTap,
+          quantity: quantity,
         ),
       ],
     );
@@ -159,7 +153,7 @@ class CustomWishlistItem extends StatelessWidget {
           width: width,
           height: height,
           errorWidget: (context, url, error) => Image.asset(
-            AppImages.kWishlistItem,
+            AppImages.kTestProdecutList,
             fit: .cover,
             width: width,
             height: height,

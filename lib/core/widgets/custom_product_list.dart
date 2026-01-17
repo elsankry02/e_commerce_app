@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commerce_app/core/widgets/custom_favourite_icon.dart';
+import 'package:e_commerce_app/core/widgets/custom_favourite_icon_btn.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../utils/constants/app_images.dart';
 import '../utils/extensions/app_extensions.dart';
@@ -28,7 +28,7 @@ class CustomProductList extends StatelessWidget {
     this.price = 2200,
     this.rating = 4.3,
     this.oldPrice,
-    this.icon = Iconsax.heart_copy,
+    this.icon = FontAwesomeIcons.heart,
     this.iconColor,
     this.width,
     this.margin,
@@ -77,7 +77,7 @@ class CustomProductList extends StatelessWidget {
                   Positioned(
                     top: 8,
                     right: 8,
-                    child: CustomFavouriteIcon(
+                    child: CustomFavouriteIconBtn(
                       favouriteOnTap: favouriteOnTap,
                       icon: icon,
                       iconColor: iconColor,
