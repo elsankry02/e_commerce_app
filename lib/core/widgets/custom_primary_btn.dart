@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/utils/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomPrimaryBtn extends StatelessWidget {
@@ -21,7 +22,7 @@ class CustomPrimaryBtn extends StatelessWidget {
     super.key,
     required this.title,
     this.margin = EdgeInsets.zero,
-    this.textStyle,
+    this.textStyle = const TextStyle(color: AppColors.kWhite),
     this.onTap,
     this.padding = const EdgeInsets.symmetric(horizontal: 50),
     this.isLoading = false,
@@ -31,10 +32,10 @@ class CustomPrimaryBtn extends StatelessWidget {
     this.circularColor = Colors.white,
     this.width,
     this.height,
-    this.disabledBackgroundColor = Colors.white,
-    this.disabledForegroundColor = Colors.white,
+    this.disabledBackgroundColor = AppColors.kMainColor,
+    this.disabledForegroundColor = AppColors.kMainColor,
     this.elevation = 0,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = AppColors.kMainColor,
     this.shadowColor,
     this.mainAxisSize = MainAxisSize.max,
   });
