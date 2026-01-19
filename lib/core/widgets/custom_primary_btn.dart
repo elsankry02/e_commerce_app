@@ -6,6 +6,7 @@ class CustomPrimaryBtn extends StatelessWidget {
   final BorderSide borderSide;
   final EdgeInsets margin, padding;
   final bool isLoading;
+  final IconData? rightIcon, leftIcon;
   final MainAxisSize mainAxisSize;
   final TextAlign? textAlign;
   final double? width, height, elevation;
@@ -38,6 +39,8 @@ class CustomPrimaryBtn extends StatelessWidget {
     this.backgroundColor = AppColors.kMainColor,
     this.shadowColor,
     this.mainAxisSize = MainAxisSize.max,
+    this.rightIcon,
+    this.leftIcon,
   });
 
   @override
@@ -74,7 +77,16 @@ class CustomPrimaryBtn extends StatelessWidget {
                         strokeWidth: 1.5,
                       ),
                     )
-                  : Text(title, textAlign: textAlign, style: textStyle),
+                  : Row(
+                      spacing: 27,
+                      children: [
+                        if (leftIcon != null)
+                          Icon(leftIcon, size: 24, color: AppColors.kWhite),
+                        Text(title, textAlign: textAlign, style: textStyle),
+                        if (rightIcon != null)
+                          Icon(rightIcon, size: 24, color: AppColors.kWhite),
+                      ],
+                    ),
             ],
           ),
         ),
