@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commerce_app/core/utils/constants/app_images.dart';
-import 'package:e_commerce_app/core/utils/extensions/app_extensions.dart';
-import 'package:e_commerce_app/core/utils/theme/app_colors.dart';
-import 'package:e_commerce_app/core/utils/theme/app_text_style.dart';
+import '../utils/constants/app_images.dart';
+import '../utils/extensions/app_extensions.dart';
+import '../utils/theme/app_colors.dart';
+import '../utils/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class CustomCategoryItem extends StatelessWidget {
