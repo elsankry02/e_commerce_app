@@ -1,6 +1,17 @@
-import 'app.dart';
+import 'package:e_commerce_app/constants.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const EcommerceApp());
+import 'app.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+      path: kTranslations,
+      supportedLocales: [Locale('ar'), Locale('en')],
+      child: const EcommerceApp(),
+    ),
+  );
 }

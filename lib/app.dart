@@ -1,7 +1,8 @@
 import 'package:e_commerce_app/core/routers/go_router.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'core/utils/constants/app_strings.dart';
+import 'constants.dart';
 
 class EcommerceApp extends StatelessWidget {
   const EcommerceApp({super.key});
@@ -10,6 +11,9 @@ class EcommerceApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       theme: ThemeData(brightness: Brightness.light, fontFamily: kPoppins),
       routerConfig: router,
     );
