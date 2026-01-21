@@ -1,11 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+
 import '../utils/constants/app_images.dart';
 import '../utils/extensions/app_extensions.dart';
 import '../utils/theme/app_colors.dart';
 import '../utils/theme/app_text_style.dart';
 import 'custom_favourite_icon_btn.dart';
 import 'custom_primary_btn.dart';
-import 'package:flutter/material.dart';
 
 class CustomWishlistItem extends StatelessWidget {
   final void Function()? addToCartOnTap, favouriteOnTap, itemOnTap;
@@ -111,7 +113,7 @@ class CustomWishlistItem extends StatelessWidget {
       mainAxisAlignment: .spaceBetween,
       children: [
         Text(
-          "EGP ${price.toString()}",
+          "${price.toString()} ${"egp".tr()}",
           style: AppTextStyle.kTitleMediumMedium(
             context,
             color: AppColors.kTextColor,
@@ -119,7 +121,7 @@ class CustomWishlistItem extends StatelessWidget {
         ),
         if (oldPrice != null && oldPrice! > 0)
           Text(
-            "EGP ${oldPrice.toString()}",
+            "${oldPrice.toString()} ${"egp".tr()}",
             style: context.kTextTheme.labelSmall!.copyWith(
               fontWeight: FontWeight.w400,
               color: AppColors.kLineThrough,
@@ -128,7 +130,7 @@ class CustomWishlistItem extends StatelessWidget {
             ),
           ),
         CustomPrimaryBtn(
-          title: "Add to Cart",
+          title: "add_to_cart".tr(),
           borderRadius: BorderRadius.circular(15),
           textStyle: AppTextStyle.kTitleSmallMedium(
             context,

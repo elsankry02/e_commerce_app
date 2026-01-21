@@ -15,7 +15,9 @@ class _TestPageState extends State<TestPage> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: Center(
-            child: SingleChildScrollView(child: Column(children: [])),
+            child: SingleChildScrollView(child: Column(children: [
+                ],
+              )),
           ),
         ),
       ),

@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'custom_favourite_icon_btn.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,6 +7,7 @@ import '../utils/constants/app_images.dart';
 import '../utils/extensions/app_extensions.dart';
 import '../utils/theme/app_colors.dart';
 import '../utils/theme/app_text_style.dart';
+import 'custom_favourite_icon_btn.dart';
 
 class CustomProductList extends StatelessWidget {
   final void Function()? addOnTap, productOnTap, favouriteOnTap;
@@ -107,12 +108,12 @@ class CustomProductList extends StatelessWidget {
                       spacing: 20,
                       children: [
                         Text(
-                          "EGP ${price.toString()}",
+                          "${price.toString()} ${"egp".tr()}",
                           style: bodyMediumRegular,
                         ),
                         if (oldPrice != null && oldPrice! > 0)
                           Text(
-                            "EGP ${oldPrice.toString()}",
+                            "${oldPrice.toString()} ${"egp".tr()}",
                             style: context.kTextTheme.labelSmall!.copyWith(
                               fontWeight: FontWeight.w400,
                               color: AppColors.kLineThrough,
@@ -129,7 +130,7 @@ class CustomProductList extends StatelessWidget {
                           spacing: 4,
                           children: [
                             Text(
-                              "Review (${rating.toString()})",
+                              "review".tr(args: [rating.toString()]),
                               style: AppTextStyle.kBodySmallRegular(context),
                             ),
                             const Icon(

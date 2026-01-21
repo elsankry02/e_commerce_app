@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+
 import '../utils/constants/app_images.dart';
 import '../utils/extensions/app_extensions.dart';
 import '../utils/theme/app_colors.dart';
 import '../utils/theme/app_text_style.dart';
 import 'custom_primary_btn.dart';
-import 'package:flutter/material.dart';
 
 class CustomCategoryCard extends StatelessWidget {
   final String imageUrl, title;
@@ -71,7 +73,7 @@ class CustomCategoryCard extends StatelessWidget {
                     ),
                   ),
                   CustomPrimaryBtn(
-                    title: "Shop Now",
+                    title: "shop_now".tr(),
                     backgroundColor: AppColors.kMainColor,
                     disabledBackgroundColor: AppColors.kMainColor,
                     textStyle: AppTextStyle.kLabelMediumRegular(
