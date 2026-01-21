@@ -1,3 +1,26 @@
 {
-    
+  "category_default": "الفئة",
+  "shop_now": "تسوق الآن",
+  "size": "المقاس",
+  "egp": "ج.م",
+  "default_product_title": "نايكي إير جوردان",
+  "default_color": "برتقالي",
+  "cart": "العربة",
+  "my_cart": "عربة التسوق",
+  "checkout": "إتمام الشراء",
+  "total": "الإجمالي",
+  "subtotal": "المجموع الفرعي",
+  "shipping": "الشحن",
+  "remove_item": "حذف العنصر",
+  "empty_cart": "عربة التسوق فارغة",
+  "add_to_cart": "أضف إلى السلة",
+  "quantity": "الكمية",
+  "enter_name_hint": "أدخل اسمك",
+  "email_hint": "أدخل بريدك الإلكتروني",
+  "password_hint": "أدخل كلمة المرور",
+  "phone_hint": "أدخل رقم هاتفك",
+  "default_description": "حذاء نايكي مرن للمشي..",
+  "review": "تقييم ({})",
+  "default_dress": "فستان قطني طويل",
+  "orange_color": "برتقالي"
 }

@@ -1,1 +1,26 @@
-{}
+{
+  "category_default": "Category",
+  "shop_now": "Shop Now",
+  "size": "Size",
+  "egp": "EGP",
+  "default_product_title": "Nike Air Jordan",
+  "default_color": "Orange",
+  "cart": "Cart",
+  "my_cart": "My Cart",
+  "checkout": "Checkout",
+  "total": "Total",
+  "subtotal": "Subtotal",
+  "shipping": "Shipping",
+  "remove_item": "Remove Item",
+  "empty_cart": "Your cart is empty",
+  "add_to_cart": "Add to Cart",
+  "quantity": "Quantity",
+  "enter_name_hint": "Enter your name",
+  "email_hint": "Enter your email",
+  "password_hint": "Enter your password",
+  "phone_hint": "Enter your phone number",
+  "default_description": "Nike shoes flexible for walking..",
+  "review": "Review ({})",
+  "default_dress": "Tall Cotton Dress",
+  "orange_color": "Orange"
+}
