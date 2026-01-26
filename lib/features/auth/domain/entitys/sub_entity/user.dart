@@ -1,13 +1,7 @@
-
 class User {
-  final String name;
-  final String email;
-  final String role;
+  final String nameEn;
+  final String emailEn;
+  final String roleEn;
 
-  User({required this.name, required this.email, required this.role});
-
-  factory User.fromJson(Map<String, dynamic> json) =>
-      User(name: json["name"], email: json["email"], role: json["role"]);
-
-  Map<String, dynamic> toJson() => {"name": name, "email": email, "role": role};
+  User({required this.nameEn, required this.emailEn, required this.roleEn});
 }

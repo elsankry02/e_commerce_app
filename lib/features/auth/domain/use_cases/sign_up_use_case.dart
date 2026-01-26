@@ -23,7 +23,7 @@ class SignUpUseCase {
       phone: phone,
     );
     return response.fold((failure) => left(failure), (user) async {
-      final token = user.token;
+      final token = user.tokenEn;
       await authRepos.saveToken(token: token);
       return right(user);
     });
