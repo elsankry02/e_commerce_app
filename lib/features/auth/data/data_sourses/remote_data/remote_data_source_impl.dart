@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/features/auth/data/data_sourses/remote_data/remote_data_source.dart';
-import 'package:e_commerce_app/features/auth/domain/entitys/user_entity.dart';
+import 'package:e_commerce_app/features/auth/domain/entitys/auth_response_entity.dart';
 
 class RemoteDataSourceImpl extends RemoteDataSource {
   @override
@@ -9,13 +9,16 @@ class RemoteDataSourceImpl extends RemoteDataSource {
   }
 
   @override
-  Future<UserEntity> signIn({required String email, required String password}) {
+  Future<AuthResponseEntity> signIn({
+    required String email,
+    required String password,
+  }) {
     // TODO: implement signIn
     throw UnimplementedError();
   }
 
   @override
-  Future<UserEntity> signUp({
+  Future<AuthResponseEntity> signUp({
     required String name,
     required String email,
     required String password,
