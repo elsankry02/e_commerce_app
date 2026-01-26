@@ -14,7 +14,7 @@ class SignInUseCase {
   }) async {
     final response = await authRepos.signIn(email: email, password: password);
     return response.fold((failure) => left(failure), (user) async {
-      final token = user.token;
+      final token = user.tokenEn;
       await authRepos.saveToken(token: token);
       return right(user);
     });

@@ -1,13 +1,13 @@
 import 'package:e_commerce_app/features/auth/domain/entitys/sub_entity/user_entity.dart';
 
 class AuthResponseEntity {
-  final String message;
-  final UserEntity user;
-  final String token;
+  final String messageEn;
+  final UserEntity userEn;
+  final String tokenEn;
 
   AuthResponseEntity({
-    required this.message,
-    required this.user,
-    required this.token,
+    required this.messageEn,
+    required this.userEn,
+    required this.tokenEn,
   });
 }

@@ -1,11 +1,11 @@
 class UserEntity {
-  final String name;
-  final String email;
-  final String role;
+  final String nameEn;
+  final String emailEn;
+  final String roleEn;
 
   UserEntity({
-    required this.name,
-    required this.email,
-    required this.role,
+    required this.nameEn,
+    required this.emailEn,
+    required this.roleEn,
   });
 }
