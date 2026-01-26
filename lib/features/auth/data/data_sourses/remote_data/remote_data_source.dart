@@ -12,6 +12,4 @@ abstract class RemoteDataSource {
     required String email,
     required String password,
   });
-  Future<String> forgotPasswords({required String email});
-  Future<void> verifyResetCode({required String resetCode});
 }
