@@ -1,5 +1,4 @@
 class ApiKeys {
-  static const baseUrl = "https://ecommerce.routemisr.com/api/v1";
   // Keys
   static const contentType = 'Content-Type';
   static const accept = 'Accept';
@@ -9,7 +8,9 @@ class ApiKeys {
   static const all = '*/*';
 
   // Request Body Keys
+  static const user = 'user';
   static const email = 'email';
+  static const message = 'message';
   static const password = 'password';
   static const name = 'name';
   static const phone = 'phone';

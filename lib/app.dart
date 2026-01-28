@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import 'core/utils/constants/constants.dart';
 import 'core/routers/go_router.dart';
 
 class EcommerceApp extends StatelessWidget {

@@ -1,22 +1,14 @@
-import 'package:dio/dio.dart';
 import 'package:e_commerce_app/core/databases/api/api_keys.dart';
+import 'package:e_commerce_app/core/databases/api/dio_consumer.dart';
 import 'package:e_commerce_app/core/databases/api/end_points.dart';
 import 'package:e_commerce_app/features/auth/data/data_sourses/remote_data/remote_data_source.dart';
 import 'package:e_commerce_app/features/auth/data/models/auth_response_model.dart';
 import 'package:e_commerce_app/features/auth/domain/entitys/auth_response_entity.dart';
 
 class RemoteDataSourceImpl extends RemoteDataSource {
-  final Dio dio;
+  final DioConsumer dio;
 
-  RemoteDataSourceImpl({required this.dio}) {
-    dio.options = BaseOptions(
-      baseUrl: ApiKeys.baseUrl,
-      headers: {
-        ApiKeys.contentType: ApiKeys.applicationJson,
-        ApiKeys.accept: ApiKeys.all,
-      },
-    );
-  }
+  RemoteDataSourceImpl(this.dio);
 
   @override
   Future<AuthResponseEntity> signIn({
@@ -27,8 +19,8 @@ class RemoteDataSourceImpl extends RemoteDataSource {
       EndPoints.signIn,
       data: {ApiKeys.email: email, ApiKeys.password: password},
     );
-    final data = response.data as Map<String, dynamic>;
-    return AuthResponseModel.fromJson(data);
+    final userData = response[ApiKeys.user] as Map<String, dynamic>;
+    return AuthResponseModel.fromJson(userData);
   }
 
   @override
@@ -38,8 +30,18 @@ class RemoteDataSourceImpl extends RemoteDataSource {
     required String password,
     required String rePassword,
     required String phone,
-  }) {
-    // TODO: implement signUp
-    throw UnimplementedError();
+  }) async {
+    final response = await dio.post(
+      EndPoints.signUp,
+      data: {
+        ApiKeys.name: name,
+        ApiKeys.email: email,
+        ApiKeys.password: password,
+        ApiKeys.rePassword: rePassword,
+        ApiKeys.phone: phone,
+      },
+    );
+    final userData = response[ApiKeys.user] as Map<String, dynamic>;
+    return AuthResponseModel.fromJson(userData);
   }
 }
