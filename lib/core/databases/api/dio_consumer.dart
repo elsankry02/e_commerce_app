@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:e_commerce_app/core/errors/exception.dart';
+import 'package:e_commerce_app/env.dart';
+
 import 'api_consumer.dart';
 import 'api_keys.dart';
-import '../../errors/failure.dart';
-import '../../../env.dart';
 
 class DioConsumer extends ApiConsumer {
   final Dio dio;
@@ -40,7 +41,7 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } on DioException catch (e) {
-      _handleDioException(e);
+      handleDioException(e);
     }
   }
 
@@ -58,7 +59,7 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } on DioException catch (e) {
-      _handleDioException(e);
+      handleDioException(e);
     }
   }
 
@@ -79,7 +80,7 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } on DioException catch (e) {
-      _handleDioException(e);
+      handleDioException(e);
     }
   }
 
@@ -100,16 +101,7 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } on DioException catch (e) {
-      _handleDioException(e);
-    }
-  }
-
-  void _handleDioException(DioException e) {
-    if (e.response != null && e.response!.data is Map) {
-      final errmessage = e.response!.data[ApiKeys.message] ?? "Error occurred";
-      throw Failure(message: errmessage);
-    } else {
-      throw Failure(message: "Check your internet connection");
+      handleDioException(e);
     }
   }
 }

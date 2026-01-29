@@ -8,10 +8,10 @@ class ServerException implements Exception {
 }
 
 //!CacheExeption
-// class CacheExeption implements Exception {
-//   final String errorMessage;
-//   CacheExeption({required this.errorMessage});
-// }
+class CacheExeption implements Exception {
+  final String errorMessage;
+  CacheExeption({required this.errorMessage});
+}
 
 class BadCertificateException extends ServerException {
   BadCertificateException(super.errorModel);
@@ -69,44 +69,31 @@ void handleDioException(DioException e) {
       throw BadCertificateException(ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.connectionTimeout:
       throw ConnectionTimeoutException(ErrorModel.fromJson(e.response!.data));
-
     case DioExceptionType.receiveTimeout:
       throw ReceiveTimeoutException(ErrorModel.fromJson(e.response!.data));
-
     case DioExceptionType.sendTimeout:
       throw SendTimeoutException(ErrorModel.fromJson(e.response!.data));
-
     case DioExceptionType.badResponse:
       switch (e.response?.statusCode) {
         case 400: // Bad request
-
           throw BadResponseException(ErrorModel.fromJson(e.response!.data));
-
         case 401: //unauthorized
           throw UnauthorizedException(ErrorModel.fromJson(e.response!.data));
-
         case 403: //forbidden
           throw ForbiddenException(ErrorModel.fromJson(e.response!.data));
-
         case 404: //not found
           throw NotFoundException(ErrorModel.fromJson(e.response!.data));
-
         case 409: //cofficient
-
           throw CofficientException(ErrorModel.fromJson(e.response!.data));
-
         case 504: // Bad request
-
           throw BadResponseException(
             ErrorModel(message: e.response!.data, statusMsg: 504.toString()),
           );
       }
-
     case DioExceptionType.cancel:
       throw CancelException(
         ErrorModel(message: e.toString(), statusMsg: 500.toString()),
       );
-
     case DioExceptionType.unknown:
       throw UnknownException(
         ErrorModel(message: e.toString(), statusMsg: 500.toString()),
