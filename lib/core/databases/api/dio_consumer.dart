@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:e_commerce_app/core/databases/api/api_consumer.dart';
-import 'package:e_commerce_app/core/databases/api/api_keys.dart';
-import 'package:e_commerce_app/core/errors/failure.dart';
-import 'package:e_commerce_app/env.dart';
+import 'api_consumer.dart';
+import 'api_keys.dart';
+import '../../errors/failure.dart';
+import '../../../env.dart';
 
 class DioConsumer extends ApiConsumer {
   final Dio dio;

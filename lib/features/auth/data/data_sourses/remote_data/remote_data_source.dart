@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/features/auth/domain/entitys/auth_response_entity.dart';
+import '../../../domain/entitys/auth_response_entity.dart';
 
 abstract class RemoteDataSource {
   Future<AuthResponseEntity> signUp({

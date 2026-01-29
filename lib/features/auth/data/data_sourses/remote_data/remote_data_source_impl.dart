@@ -1,9 +1,9 @@
-import 'package:e_commerce_app/core/databases/api/api_keys.dart';
-import 'package:e_commerce_app/core/databases/api/dio_consumer.dart';
-import 'package:e_commerce_app/core/databases/api/end_points.dart';
-import 'package:e_commerce_app/features/auth/data/data_sourses/remote_data/remote_data_source.dart';
-import 'package:e_commerce_app/features/auth/data/models/auth_response_model.dart';
-import 'package:e_commerce_app/features/auth/domain/entitys/auth_response_entity.dart';
+import '../../../../../core/databases/api/api_keys.dart';
+import '../../../../../core/databases/api/dio_consumer.dart';
+import '../../../../../core/databases/api/end_points.dart';
+import 'remote_data_source.dart';
+import '../../models/auth_response_model.dart';
+import '../../../domain/entitys/auth_response_entity.dart';
 
 class RemoteDataSourceImpl extends RemoteDataSource {
   final DioConsumer dio;

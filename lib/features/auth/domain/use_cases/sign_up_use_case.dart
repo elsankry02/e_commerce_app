@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_commerce_app/core/errors/failure.dart';
-import 'package:e_commerce_app/features/auth/domain/entitys/auth_response_entity.dart';
-import 'package:e_commerce_app/features/auth/domain/repos/auth_repos.dart';
+import '../../../../core/errors/failure.dart';
+import '../entitys/auth_response_entity.dart';
+import '../repos/auth_repos.dart';
 
 class SignUpUseCase {
   final AuthRepos authRepos;

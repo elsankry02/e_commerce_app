@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_commerce_app/core/errors/failure.dart';
-import 'package:e_commerce_app/features/auth/domain/entitys/auth_response_entity.dart';
+import '../../../../core/errors/failure.dart';
+import '../entitys/auth_response_entity.dart';
 
 abstract class AuthRepos {
   Future<Either<Failure, AuthResponseEntity>> signUp({

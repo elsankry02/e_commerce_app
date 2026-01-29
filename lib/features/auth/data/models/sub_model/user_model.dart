@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/features/auth/domain/entitys/sub_entity/user_entity.dart';
+import '../../../domain/entitys/sub_entity/user_entity.dart';
 
 class UserModel extends UserEntity {
   final String name;

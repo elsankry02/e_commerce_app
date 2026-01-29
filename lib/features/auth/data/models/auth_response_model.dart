@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/features/auth/data/models/sub_model/user_model.dart';
-import 'package:e_commerce_app/features/auth/domain/entitys/auth_response_entity.dart';
+import 'sub_model/user_model.dart';
+import '../../domain/entitys/auth_response_entity.dart';
 
 class AuthResponseModel extends AuthResponseEntity {
   final String message;
