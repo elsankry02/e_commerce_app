@@ -44,4 +44,22 @@ class RemoteDataSourceImpl extends RemoteDataSource {
     final userData = response[ApiKeys.user] as Map<String, dynamic>;
     return AuthResponseModel.fromJson(userData);
   }
+
+  @override
+  Future<String> forgotPasswords({required String email}) async {
+    final response = await dio.post(
+      EndPoints.forgotPasswords,
+      data: {ApiKeys.email: email},
+    );
+    return response[ApiKeys.message];
+  }
+
+  @override
+  Future<String> verifyResetCode({required String resetCode}) async {
+    final response = await dio.post(
+      EndPoints.verifyResetCode,
+      data: {ApiKeys.resetCode: resetCode},
+    );
+    return response[ApiKeys.message];
+  }
 }

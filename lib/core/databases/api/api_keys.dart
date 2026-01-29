@@ -8,11 +8,12 @@ class ApiKeys {
   static const all = '*/*';
 
   // Request Body Keys
+  static const name = 'name';
   static const user = 'user';
   static const email = 'email';
+  static const phone = 'phone';
   static const message = 'message';
   static const password = 'password';
-  static const name = 'name';
-  static const phone = 'phone';
   static const rePassword = 'rePassword';
+  static const resetCode = 'resetCode';
 }
