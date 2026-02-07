@@ -3,6 +3,7 @@ import 'package:e_commerce_app/features/account/presentation/view/account_page.d
 import 'package:e_commerce_app/features/category/presentation/view/category_page.dart';
 import 'package:e_commerce_app/features/home/presentation/view/home_page.dart';
 import 'package:e_commerce_app/features/layout/navigation_menu.dart';
+import 'package:e_commerce_app/features/splash/splash_page.dart';
 import 'package:e_commerce_app/features/wishlist/presentation/view/wishlist_page.dart';
 
 part 'router.gr.dart';
@@ -18,6 +19,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: HomeRoute.page),
     AutoRoute(page: NavigationMenuRoute.page),
     AutoRoute(page: WishlistRoute.page),
+    AutoRoute(page: SplashRoute.page),
 
     // AutoRoute(page: ),
   ];
