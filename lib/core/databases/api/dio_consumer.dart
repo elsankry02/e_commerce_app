@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:e_commerce_app/app/env.dart';
 import 'package:e_commerce_app/core/errors/exception.dart';
-import 'package:e_commerce_app/env.dart';
 
 import 'api_consumer.dart';
 import 'api_keys.dart';
@@ -26,25 +26,6 @@ class DioConsumer extends ApiConsumer {
       ),
     );
   }
-  @override
-  Future<dynamic> delete(
-    String path, {
-    Object? data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-  }) async {
-    try {
-      final response = await dio.delete(
-        path,
-        data: data,
-        queryParameters: queryParameters,
-      );
-      return response.data;
-    } on DioException catch (e) {
-      handleDioException(e);
-    }
-  }
-
   @override
   Future<dynamic> get(
     String path, {
@@ -97,6 +78,24 @@ class DioConsumer extends ApiConsumer {
         data: isFormData
             ? FormData.fromMap(data as Map<String, dynamic>)
             : data,
+        queryParameters: queryParameters,
+      );
+      return response.data;
+    } on DioException catch (e) {
+      handleDioException(e);
+    }
+  }
+
+  @override
+  Future<dynamic> delete(
+    String path, {
+    Object? data,
+    Map<String, dynamic>? queryParameters,
+  }) async {
+    try {
+      final response = await dio.delete(
+        path,
+        data: data,
         queryParameters: queryParameters,
       );
       return response.data;

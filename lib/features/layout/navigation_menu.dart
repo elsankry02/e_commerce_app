@@ -1,6 +1,7 @@
 // Imports (تأكد من صحة المسارات في مشروعك)
-import 'package:e_commerce_app/core/utils/theme/app_colors.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:e_commerce_app/core/components/custom_btm_nav_bar.dart';
+import 'package:e_commerce_app/core/utils/theme/app_colors.dart';
 import 'package:e_commerce_app/features/account/presentation/view/account_page.dart';
 import 'package:e_commerce_app/features/category/presentation/view/category_page.dart';
 import 'package:e_commerce_app/features/home/presentation/view/home_page.dart';
@@ -9,14 +10,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-class NavigationMenu extends StatefulWidget {
-  const NavigationMenu({super.key});
+@RoutePage()
+class NavigationMenuPage extends StatefulWidget {
+  const NavigationMenuPage({super.key});
 
   @override
-  State<NavigationMenu> createState() => _NavigationMenuState();
+  State<NavigationMenuPage> createState() => _NavigationMenuPageState();
 }
 
-class _NavigationMenuState extends State<NavigationMenu> {
+class _NavigationMenuPageState extends State<NavigationMenuPage> {
   int currentIndex = 0;
   final List<Widget> _pages = const [
     HomePage(),
