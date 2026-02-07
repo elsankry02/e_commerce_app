@@ -1,6 +1,6 @@
 // Imports (تأكد من صحة المسارات في مشروعك)
 import 'package:e_commerce_app/core/utils/theme/app_colors.dart';
-import 'package:e_commerce_app/core/widgets/custom_btm_nav_bar.dart';
+import 'package:e_commerce_app/core/components/custom_btm_nav_bar.dart';
 import 'package:e_commerce_app/features/account/presentation/view/account_page.dart';
 import 'package:e_commerce_app/features/category/presentation/view/category_page.dart';
 import 'package:e_commerce_app/features/home/presentation/view/home_page.dart';
