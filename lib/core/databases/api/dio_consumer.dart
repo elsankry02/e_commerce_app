@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:e_commerce_app/app/env.dart';
-import 'package:e_commerce_app/core/errors/exception.dart';
+import '../../../app/env.dart';
+import '../../errors/exception.dart';
 
 import 'api_consumer.dart';
 import 'api_keys.dart';
